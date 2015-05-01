@@ -4,6 +4,7 @@ bourbon    = require 'node-bourbon'
 cssmin     = require 'gulp-cssmin'
 coffee     = require 'gulp-coffee'
 jade       = require 'gulp-jade'
+install    = require 'gulp-install'
 sass       = require 'gulp-sass'
 uglify     = require 'gulp-uglify'
 
@@ -26,5 +27,12 @@ gulp.task 'html', ->
     .pipe jade(pretty: true)
     .pipe gulp.dest 'example'
 
+gulp.task 'install', ->
+  gulp.src([
+    './bower.json'
+    './package.json'
+  ])
+  .pipe(install())
+
 # Default task call every tasks created so far.
-gulp.task 'default', ['css', 'js', 'html']
+gulp.task 'default', ['install', 'css', 'js', 'html']

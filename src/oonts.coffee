@@ -1,6 +1,6 @@
-window.oonts = ->
-  partyTimeSec = 10
-  bpm = 125
+window.oonts = (opts = {}) ->
+  partyTimeSec = opts['duration'] || 10
+  bpm = opts['bpm'] || 125
 
   # Spin it!
   $('html').css('overflow-x', 'hidden')
