@@ -1,0 +1,28 @@
+@import 'bourbon';
+
+@include keyframes(oonts) {
+  from {
+    @include transform(rotate(-30deg));
+    @include filter(brightness(5));
+  }
+  to {
+    @include transform(rotate(0deg));
+    @include filter(brightness(0));
+  }
+}
+
+@include keyframes(rainbow) {
+  from {
+    @include filter(saturate(10));
+    @include filter(hue-rotate(360deg));
+  }
+  to {
+    @include filter(saturate(10));
+    @include filter(hue-rotate(0deg));
+  }
+}
+
+.oonts {
+  background-color: #0ff;
+}
+

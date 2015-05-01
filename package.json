@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "coffee-script": "latest",
+    "gulp": "latest",
+    "gulp-coffee": "latest",
+    "gulp-cssmin": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "^1.2.0",
+    "node-bourbon": "^4.2.2"
+  }
+}
