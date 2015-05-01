@@ -2,7 +2,11 @@
 
 ## Use
 
-1. Turn up volume
+1. Require it
+```html
+<script src='oonts.js'></script>
+<link rel='stylesheet' href='oonts.css'/>
+```
 2. Call ```oonts()```
 3. Have a party
 
