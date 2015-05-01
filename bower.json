@@ -5,7 +5,11 @@
     "Kurt Preston <github@kurtpreston.com>"
   ],
   "description": "Throw a rave on your website",
-  "main": ["dist/oonts.js", "dist/oonts.css"],
+  "main": [
+    "dist/oonts.js",
+    "dist/oonts.css",
+    "dist/oonts.mp3"
+  ],
   "keywords": [
     "rave",
     "oonts",
@@ -21,6 +25,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
+    "jquery": ">= 1.3"
   }
 }

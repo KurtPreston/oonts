@@ -11,7 +11,7 @@ window.oonts = ->
   # Oonts it!
   intervalTimeMs = 60 * 1000 / bpm
   numRepeats = partyTimeSec * 1000 / intervalTimeMs
-  audio = new Audio('/oonts.mp3')
+  audio = new Audio('../dist/oonts.mp3')
   window.audio = audio
 
   repeats = 0
