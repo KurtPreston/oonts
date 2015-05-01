@@ -1,9 +1,10 @@
 # Load all required libraries.
 gulp       = require 'gulp'
 bourbon    = require 'node-bourbon'
-coffee     = require 'gulp-coffee'
-sass       = require 'gulp-sass'
 cssmin     = require 'gulp-cssmin'
+coffee     = require 'gulp-coffee'
+jade       = require 'gulp-jade'
+sass       = require 'gulp-sass'
 uglify     = require 'gulp-uglify'
 
 gulp.task 'css', ->
@@ -20,5 +21,10 @@ gulp.task 'js', ->
     .pipe uglify()
     .pipe gulp.dest 'dist'
 
+gulp.task 'html', ->
+  gulp.src 'example/*.jade'
+    .pipe jade(pretty: true)
+    .pipe gulp.dest 'example'
+
 # Default task call every tasks created so far.
-gulp.task 'default', ['css', 'js']
+gulp.task 'default', ['css', 'js', 'html']
