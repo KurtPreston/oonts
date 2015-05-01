@@ -7,8 +7,7 @@
   "description": "Throw a rave on your website",
   "main": [
     "dist/oonts.js",
-    "dist/oonts.css",
-    "dist/oonts.mp3"
+    "dist/oonts.css"
   ],
   "keywords": [
     "rave",
