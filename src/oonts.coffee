@@ -26,7 +26,7 @@ window.oonts = (opts = {}) ->
     # Strobe it!
     $('body').css('animation', "oonts #{intervalTimeMs}ms")
     $('html').css('animation', "rainbow #{intervalTimeMs}ms")
-    $('body, #main-dashboard').addClass('oonts')
+    $('body').addClass('oonts')
     setTimeout( ->
       $('body, html').css('animation', 'none')
       $('body').removeClass('oonts')
