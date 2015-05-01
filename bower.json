@@ -1,0 +1,24 @@
+{
+  "name": "oonts",
+  "version": "0.0.1",
+  "authors": [
+    "Kurt Preston <github@kurtpreston.com>"
+  ],
+  "description": "Throw a rave on your website",
+  "main": ["dist/oonts.js", "dist/oonts.css"]
+  "keywords": [
+    "rave",
+    "oonts",
+    "party",
+    "colors"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/KurtPreston/oonts",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
