@@ -12,8 +12,8 @@ watch      = require 'gulp-watch'
 files =
   scss: 'src/*.scss'
   coffee: 'src/*.coffee'
-  jade: 'example/*.jade'
-  example_scss: 'example/*.scss'
+  jade: 'example/src/*.jade'
+  example_scss: 'example/src/*.scss'
 
 gulp.task 'css', ->
   gulp.src files.scss
