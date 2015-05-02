@@ -7,9 +7,15 @@ jade       = require 'gulp-jade'
 install    = require 'gulp-install'
 sass       = require 'gulp-sass'
 uglify     = require 'gulp-uglify'
+watch      = require 'gulp-watch'
+
+files =
+  scss: 'src/*.scss'
+  coffee: 'src/*.coffee'
+  jade: 'example/*.jade'
 
 gulp.task 'css', ->
-  gulp.src 'src/*.scss'
+  gulp.src files.scss
     .pipe sass(
       includePaths: require('node-bourbon').includePaths
     )
@@ -17,13 +23,13 @@ gulp.task 'css', ->
     .pipe gulp.dest 'dist'
 
 gulp.task 'js', ->
-  gulp.src 'src/*.coffee'
+  gulp.src files.coffee
     .pipe coffee()
     .pipe uglify()
     .pipe gulp.dest 'dist'
 
 gulp.task 'html', ->
-  gulp.src 'example/*.jade'
+  gulp.src files.jade
     .pipe jade(pretty: true)
     .pipe gulp.dest 'example'
 
@@ -34,5 +40,10 @@ gulp.task 'install', ->
   ])
   .pipe(install())
 
+gulp.task 'watch', ->
+  watch(files.scss, -> gulp.start('css'))
+  watch(files.coffee, -> gulp.start('js'))
+  watch(files.jade, -> gulp.start('html'))
+
 # Default task call every tasks created so far.
-gulp.task 'default', ['install', 'css', 'js', 'html']
+gulp.task 'default', ['install', 'css', 'js', 'html', 'watch']

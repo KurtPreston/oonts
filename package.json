@@ -8,6 +8,7 @@
     "gulp-install": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.2.4",
     "node-bourbon": "^4.2.2"
   }
 }
