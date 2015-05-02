@@ -13,14 +13,21 @@ files =
   scss: 'src/*.scss'
   coffee: 'src/*.coffee'
   jade: 'example/*.jade'
+  example_scss: 'example/*.scss'
 
 gulp.task 'css', ->
   gulp.src files.scss
     .pipe sass(
-      includePaths: require('node-bourbon').includePaths
+      includePaths: bourbon.includePaths
     )
     .pipe cssmin keepSpecialComments: 0
     .pipe gulp.dest 'dist'
+
+  gulp.src files.example_scss
+    .pipe sass(
+      includePaths: bourbon.includePaths
+    )
+    .pipe gulp.dest 'example'
 
 gulp.task 'js', ->
   gulp.src files.coffee
@@ -42,6 +49,7 @@ gulp.task 'install', ->
 
 gulp.task 'watch', ->
   watch(files.scss, -> gulp.start('css'))
+  watch(files.example_scss, -> gulp.start('css'))
   watch(files.coffee, -> gulp.start('js'))
   watch(files.jade, -> gulp.start('html'))
 

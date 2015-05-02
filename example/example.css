@@ -1,20 +1,22 @@
-body {
-  margin: 0;
-}
+.oonts {
+  background-color: #0ff; }
 
-.box1,
-.box2,
-.box3 {
+body {
+  margin: 0; }
+
+.box1, .box2, .box3 {
   height: 33%;
   color: white;
   text-align: center;
   font-size: 40px;
-}
+  background-color: #0081ff; }
+  .box1 img, .box2 img, .box3 img {
+    height: 100%; }
 
-img {
-  height: 100%;
-}
+.box2 {
+  -webkit-filter: hue-rotate(120deg);
+  filter: hue-rotate(120deg); }
 
-.box1 { background-color: red; }
-.box2 { background-color: green; }
-.box3 { background-color: blue; }
+.box3 {
+  -webkit-filter: hue-rotate(240deg);
+  filter: hue-rotate(240deg); }

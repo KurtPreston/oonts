@@ -1,0 +1,26 @@
+@import 'bourbon';
+
+.oonts {
+  background-color: #0ff;
+}
+
+body {
+  margin: 0;
+}
+
+.box1,
+.box2,
+.box3 {
+  height: 33%;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  background-color: #0081ff;
+
+  img {
+    height: 100%;
+  }
+}
+
+.box2 { @include filter(hue-rotate(120deg)) };
+.box3 { @include filter(hue-rotate(240deg)) };
