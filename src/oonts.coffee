@@ -2,10 +2,15 @@ window.oonts = (opts = {}) ->
   partyTimeSec = opts['duration'] || 10
   bpm = opts['bpm'] || 125
   audioEnabled = opts['audio'] || true
+  numSpinners = opts['spinners'] || 50
 
   # Spin it!
   $('html').css('overflow-x', 'hidden')
   $('body').addClass('oonts')
+  $('body').addClass('oonts-spin')
+  spinners = $($('body *').get().sort( -> Math.random()).slice(0, numSpinners))
+  spinners.addClass('oonts-spin')
+
   $('body *').css('transition-duration', "#{partyTimeSec}s")
 
   # Oonts it!
@@ -41,6 +46,8 @@ window.oonts = (opts = {}) ->
   # Turn that awful thing off before I call the cops!
   window.setTimeout( ->
     $('body').removeClass('oonts')
+    $('body').removeClass('oonts-spin')
+    spinners.removeClass('oonts-spin')
     clearInterval(interval)
   , partyTimeSec * 1000
   )

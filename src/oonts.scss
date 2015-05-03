@@ -24,9 +24,9 @@
 
 .oonts {
   background-color: #0ff;
+}
 
-  * {
-    @include transition(transform 10s);
-    @include transform(rotate(180deg));
-  }
+.oonts-spin {
+  @include transition(transform 10s);
+  @include transform(rotate(180deg));
 }
