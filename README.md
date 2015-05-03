@@ -1,4 +1,8 @@
-# oonts
+<img src='example/oonts-logo.png' width=200>
+
+Turn your website into a seizure-inducing rave
+
+[Demo](http://www.kurtpreston.com/oonts)
 
 ## Use
 
