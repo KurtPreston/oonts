@@ -1,35 +1,34 @@
 window.oonts = (opts = {}) ->
   partyTimeSec = opts['duration'] || 10
   bpm = opts['bpm'] || 125
+  audioEnabled = opts['audio'] || true
 
   # Spin it!
   $('html').css('overflow-x', 'hidden')
-  $('div')
-    .css('transition', "transform #{partyTimeSec}s")
-    .css('transform', 'rotate(360deg)')
+  $('body').addClass('oonts')
+  $('body *').css('transition-duration', "#{partyTimeSec}s")
 
   # Oonts it!
   intervalTimeMs = 60 * 1000 / bpm
   numRepeats = partyTimeSec * 1000 / intervalTimeMs
 
-  audio = new Audio(oontsAudio)
-  window.audio = audio
+  if audioEnabled
+    audio = new Audio(oontsAudio)
 
   repeats = 0
   bangIt = ->
     repeats += 1
 
     # Crank it!
-    audio.currentTime = 0
-    audio.play()
+    if audioEnabled
+      audio.currentTime = 0
+      audio.play()
 
     # Strobe it!
     $('body').css('animation', "oonts #{intervalTimeMs}ms")
     $('html').css('animation', "rainbow #{intervalTimeMs}ms")
-    $('body').addClass('oonts')
     setTimeout( ->
       $('body, html').css('animation', 'none')
-      $('body').removeClass('oonts')
     , intervalTimeMs * 0.9)
 
     # Just breathe...
@@ -41,6 +40,7 @@ window.oonts = (opts = {}) ->
 
   # Turn that awful thing off before I call the cops!
   window.setTimeout( ->
+    $('body').removeClass('oonts')
     clearInterval(interval)
   , partyTimeSec * 1000
   )
