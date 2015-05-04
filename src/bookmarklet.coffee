@@ -1,3 +1,4 @@
+# Function to load scripts
 loadScript = (url, callback) ->
   head = document.getElementsByTagName('head')[0]
   script = document.createElement('script')
@@ -27,13 +28,13 @@ loadOonts = ->
     oontsCss.setAttribute('rel', 'stylesheet')
     oontsCss.setAttribute(
       'href',
-      'https://cdn.rawgit.com/KurtPreston/oonts/master/dist/oonts.css'
+      'https://rawgit.com/KurtPreston/oonts/master/dist/oonts.css'
     )
     document.head.appendChild(oontsCss)
 
     oontsCss.onload =
     oontsCss.onreadystatechange = ->
-      loadScript('https://cdn.rawgit.com/KurtPreston/oonts/master/dist/oonts.js', -> window.oonts())
+      loadScript('https://rawgit.com/KurtPreston/oonts/master/dist/oonts.js', -> window.oonts())
 
 if $? && $.fn?
   loadOonts()
