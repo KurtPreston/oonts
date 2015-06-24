@@ -4,13 +4,17 @@
 body {
   margin: 0; }
 
-.box1, .box2, .box3 {
+.box1,
+.box2,
+.box3 {
   height: 33%;
   color: white;
   text-align: center;
   font-size: 40px;
   background-color: #0081ff; }
-  .box1 img, .box2 img, .box3 img {
+  .box1 img,
+  .box2 img,
+  .box3 img {
     height: 100%; }
 
 .box2 {

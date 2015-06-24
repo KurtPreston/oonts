@@ -30,11 +30,12 @@ window.oonts = (opts = {}) ->
       audio.play()
 
     # Strobe it!
-    $('body').css('animation', "oonts #{intervalTimeMs}ms")
-    $('html').css('animation', "rainbow #{intervalTimeMs}ms")
-    setTimeout( ->
-      $('body, html').css('animation', 'none')
-    , intervalTimeMs * 0.9)
+    $('body').css('animation', 'none').animate({'nothing': null}, 1, ->
+      $(this).css('animation', "oonts #{intervalTimeMs}ms")
+    )
+    $('html').css('animation', 'none').animate({'nothing': null}, 1, ->
+      $(this).css('animation', "rainbow #{intervalTimeMs}ms")
+    )
 
     # Just breathe...
     if repeats > numRepeats - 1
